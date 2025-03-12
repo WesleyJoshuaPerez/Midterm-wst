@@ -5,6 +5,21 @@ body {
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     font-family: 'Open Sans', sans-serif; 
     background-size: 20px 20px;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 20px;
+    position: relative;
+    left: 3rem;
+    width: 100%;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 a {
@@ -12,57 +27,24 @@ a {
     font-weight: 600;
     color: white;
     text-decoration: none;
-    margin-right: 15px;
-    margin-top: 50px;
-    display: inline-block;
     padding: 12px 24px;
     border-radius: 8px;
     background: #1e1e4e;
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     text-align: center;
-    position: relative;
-    left: 30rem;
-    overflow: hidden;
+    display: inline-block;
+    min-width: 150px;
+    overflow-x: hidden;
 }
 
 a:hover {
-    transform: translateY(-3px) scale(1.05); /* Slight bounce effect */
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 0px 8px 20px rgba(74, 77, 255, 0.6);
-}
-
-a::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: 110%;
-    height: 110%;
-    background: radial-gradient(circle, rgba(138, 92, 240, 0.4) 10%, transparent 80%);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    border-radius: 10px;
-}
-
-a:hover::before {
-    opacity: 1;
-    animation: pulse 1.5s infinite alternate;
-}
-
-/* Keyframe animation for glowing effect */
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    to {
-        transform: scale(1.1);
-        opacity: 1;
-    }
 }
 
 .title {
     position: absolute;
-    left: 12rem; 
+    left: 17rem; 
     top: 15rem;
     width: 500px;
     height: 300px;
@@ -112,8 +94,8 @@ a:hover::before {
 .description {
     width: 500px;
     position: relative;
-    left: 53rem;
-    top: 9rem;
+    left: 55rem;
+    top: 11rem;
 }
 
 p {
@@ -128,6 +110,83 @@ p {
     width: 100%;
     height: 770px; /* Adjust height as needed */
     z-index: -1; /* Sends it behind other content */
+}
+
+@media (max-width: 1024px) {
+    .title {
+        left: 2rem;
+        top: 12rem;
+        width: 450px;
+        height: 250px;
+        font-size: 23px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .description {
+        left: 40rem;
+        top: 10rem;
+        width: 450px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Allows buttons to wrap if needed */
+        overflow-x: hidden;
+        margin-right: 2rem;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 10px 18px;
+        min-width: 130px; /* Slightly smaller buttons */
+        overflow-x: hidden;
+    }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 768px) {
+    .title {
+        left: 0.5rem;
+        transform: translateX(-50%);
+        top: 10rem;
+        width: 90%;
+        height: auto;
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    .description {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 13rem;
+        width: 90%;
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px; /* Smaller for readability on mobile */
+        text-align: center; /* Centers text for better appearance */
+        line-height: 1.5; /* Adds spacing for readability */
+    }
+
+    .navbar {
+        flex-wrap: wrap; 
+        gap: 10px;
+        overflow-x: hidden;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 10px 16px;
+        min-width: 120px;
+        overflow-x: hidden;
+        position: relative;
+        right: 4rem;
+    }
 }
 
 

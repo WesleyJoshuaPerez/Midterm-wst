@@ -30,10 +30,13 @@ header("Pragma: no-cache");
 </head>
 <body>
 
-    <a href="admin.php"></i>Admin Page</a>
-    <a href="proj_description.php">Project Description</a>
-    <a href="members.php">Members</a>
-    <a href="login.php">Logout</a>
+    <div class="navbar">
+        <a href="admin.php">Admin Page</a>
+        <a href="proj_description.php">Project Description</a>
+        <a href="members.php">Members</a>
+        <a href="login.php">Logout</a>
+    </div>
+
 
     <div class="title">
     Online Service Management System for LYNX Fiber Internet with 2D Mapping and Chatbot Integration
