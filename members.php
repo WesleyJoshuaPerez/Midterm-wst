@@ -1,3 +1,25 @@
+<?php
+ 
+
+// Logout logic
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login.php"); // Redirect to admin page after logout
+    exit();
+}
+
+// Check if the user is logged in
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: not_logged.php"); // Redirect to login page
+    exit();
+}
+
+// Prevent back button from accessing a cached session
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +34,7 @@
         <a href="#">Admin Page</a>
         <a href="#">Project Description</a>
         <a href="#">Members</a>
-        <a href="#">Logout</a>
+        <a href="login.php">Logout</a>
     </div>
     <div class="container">
         <h1>Members Description</h1>
