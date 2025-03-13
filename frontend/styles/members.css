@@ -12,6 +12,24 @@ body {
   padding: 0;
 }
 
+/* Quote */
+.quote {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ebe4ff; 
+  border-left: 4px solid #8a5cf0;
+  font-style: italic; 
+  color: #1e1e4e;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.quote p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 /* Background Effect */
 #particles-js {
   position: absolute;
@@ -92,10 +110,10 @@ h1 {
 }
 
 .member-info {
-  flex: 1 1 calc(25% - 40px); /* Adjusted for responsiveness */
-  max-width: 280px;
+  flex: 1 1 calc(22% - 20px); 
+  max-width: 300px;
   border: 1px solid #aab2d5;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
   background-color: #e3dffd;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -112,7 +130,7 @@ h1 {
 }
 
 .member-info img {
-  width: 100px;
+  width: 120px;
   height: auto;
   display: block;
   margin: 0 auto 10px;
@@ -141,9 +159,15 @@ h1 {
 }
 
 /* Media Queries */
+@media (max-width: 1200px) {
+  .member-info {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
 @media (max-width: 1024px) {
   .member-info {
-    flex: 1 1 calc(50% - 40px);
+    flex: 1 1 calc(50% - 20px);
   }
 
   h1 {
@@ -162,7 +186,7 @@ h1 {
   }
 
   .member-info {
-    flex: 1 1 calc(100% - 40px);
+    flex: 1 1 calc(100% - 20px);
     max-width: 320px;
   }
 
