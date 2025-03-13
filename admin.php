@@ -49,8 +49,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     capable of organizing, evaluating and managing payment and contact 
     services on a subscriber base directly streamlining the lines of 
     communication between the administrators and their subscribers. 
-    The thesis group consists of two programmers which are Wesley and 
-    Kate and two documenters which are Troy and Sebastian.</p>
+    The thesis group consists of two programmers which are <b>Wesley</b> and 
+    <b>Kate</b> and two documenters which are <b>Troy</b> and <b>Sebastian.</b></p>
     </div>
 </div>
     <div id="particles-js"></div>
