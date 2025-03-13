@@ -1,23 +1,25 @@
 <?php
 session_start();
 
+// Prevent back button from accessing a cached session
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Thu, 01 Jan 1970 00:00:00 GMT");
+
 // Logout logic
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: login.php"); // Redirect to login page after logout
+    header("Location: login.php");
     exit();
 }
 
 // Check if the user is logged in
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("Location: not_logged.php"); // Redirect to login page
+    header("Location: not_logged.php");
     exit();
 }
-
-// Prevent back button from accessing a cached session
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ header("Pragma: no-cache");
     <a href="admin.php"></i>Admin Page</a>
     <a href="proj_description.php">Project Description</a>
     <a href="members.php">Members</a>
-    <a href="login.php">Logout</a>
+    <a href="?logout=true">Logout</a>
 
     <div class="container">
         <h1 class="title">THE MAIN PROBLEM</h1>

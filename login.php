@@ -1,4 +1,5 @@
 <?php
+
 session_start();
  
  
@@ -56,5 +57,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </form>
     </div>
     <script src="js/typing.js"></script>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    particlesJS("particles-js", {
+    particles: {
+        number: { value: 50 },
+        size: { value: 3 },
+        move: { speed: 2 },
+        color: { value: "1e1e4e" }, // Change this to your desired color
+        line_linked: {
+            enable: true, // If you want lines connecting particles
+            color: "#1e1e4e", // Change line color too
+        }
+    }
+    });
+    </script>
   </body>
 </html>
